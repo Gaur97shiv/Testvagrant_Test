@@ -1,0 +1,49 @@
+Public class Solution{
+public static void main(String [] args){
+int a[]=new int[4];
+a[1]=new ShopingCart("Leather wallet",1100,18,1);
+a[2]=new ShopingCart("Umbrella",900,12,28,4);
+a[3]=new ShopingCart("Cigarette",200,28,3);
+a[4]=new ShopingCart("Honey",100,0,2);
+String Product=helper1(a);
+double totalamt=helper2(a);
+System.out.println("the maximum gst amount for" +Product);
+System.out.println("the total amount" +total);
+}
+public String helper1(int []arr){
+int ind=0;
+double sum=0;
+double max=0;
+for(int i=0;i<4;i++){
+   sum=(a[i].price*quantity*gst)/100;
+   if(max>sum){
+     max=sum;
+     ind=i;
+   }
+}
+return arr[ind].product;
+}
+public double total(int [] arr){
+double sum=0;
+for(int i=0;i<4;i++){
+   if(price>500){
+   sum=sum+arr[i].price+(arr[i].price*arr[i].gst*arr[i].quantity)/100)-(arr[i].price*5*quantity);
+}
+else{
+ sum=sum+arr[i].price+(arr[i].price*arr[i].gst*arr[i].quantity)/100);
+}
+}
+return sum;
+}
+public class ShopingCart{
+String Product;
+int price;
+int gst;
+int quantity;
+shopingCart(String product,int price,int gst,int quantity){
+this.product=product;
+this.price=price;
+this.gst=gst;
+this.quantity=quantity;
+}
+}
